@@ -1,0 +1,34 @@
+.PhoneCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 20rem;
+  margin: 0.8rem auto;
+  padding: 0.7rem;
+  flex-wrap: wrap;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  transition: all 0.1s ease-in-out;
+
+  img {
+    width: 10rem;
+  }
+
+  &__addInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+
+    p {
+      padding: 0.3rem;
+    }
+  }
+}
+
+.PhoneCard:hover {
+    transform: scale(1.03);
+}
