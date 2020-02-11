@@ -1,17 +1,30 @@
-import { GET_PHONE_BY_ID } from './constants';
-import { GET_PHONE_LIST } from './constants';
+import {
+  GET_PHONES_PENDING,
+  GET_PHONES_SUCCESS,
+  GET_PHONES_FAILED
+} from './constants';
 
 const initialState = {
-  list: []
+  list: [],
+  isPending: true
 };
 
-export const handlePhones = (state = initialState, action = {}) => {
+const requestPhones = (state = initialState, action = {}) => {
   switch (action.type) {
-    case GET_PHONE_BY_ID:
-      return { ...state, list: action.payload };
-    case GET_PHONE_LIST:
-      return { ...state, list: action.payload };
+    case GET_PHONES_PENDING:
+      return Object.assign({}, state, { isPending: true });
+    case GET_PHONES_SUCCESS:
+      return Object.assign({}, state, {
+        list: action.payload,
+        isPending: false
+      });
+    case GET_PHONES_FAILED:
+      return Object.assign({}, state, {
+        error: action.payload
+      });
     default:
       return state;
   }
 };
+
+export default requestPhones;

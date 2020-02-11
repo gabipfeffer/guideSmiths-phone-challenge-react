@@ -4,9 +4,7 @@ import './style.scss';
 import PhoneCard from '../PhoneCard';
 
 
-function PhoneList() {
-
-  const list = []
+function PhoneList({ list }) {
 
   return (
     <div className="PhoneList">
