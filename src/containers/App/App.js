@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { requestPhones } from '../../state/actions';
 
 import PhoneList from '../../components/PhoneList';
-import PhoneCard from '../../components/PhoneCard';
+import PhoneCardContainer from '../PhoneCardContainer/view';
 
 import './App.scss';
 
@@ -37,6 +37,7 @@ class App extends Component {
       <div className="App">
       <Router>
         <Switch>
+          <Route path='/phones/:id' render={ () => isPending ? <h1>Loading</h1> : <PhoneCardContainer list={data} />} />
           <Route path='/phones' render={ () => isPending ? <h1>Loading</h1> : <PhoneList list={data} />} />
         </Switch>
       </Router>

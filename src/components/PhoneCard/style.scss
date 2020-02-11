@@ -12,6 +12,7 @@
   border: 2px solid black;
   border-radius: 0.5rem;
   transition: all 0.2s ease-in-out;
+  text-decoration: none;
 
   img {
     width: 5rem;
@@ -37,8 +38,4 @@
       padding: 0.3rem;
     }
   }
-}
-
-.PhoneCard:hover {
-    transform: scale(1.04);
 }
