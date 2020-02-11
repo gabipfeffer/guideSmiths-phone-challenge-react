@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './App.scss';
-import PhoneCard from './components/PhoneCard';
+import PhoneList from './components/PhoneList';
 
 function App() {
   return (
     <div className="App">
-      <PhoneCard />
+      <PhoneList />
     </div>
   );
 }
