@@ -35,7 +35,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        {isPending ? <h1>Loading</h1> : <PhoneList list={data} />}
+      <Router>
+        <Switch>
+          <Route path='/phones' render={ () => isPending ? <h1>Loading</h1> : <PhoneList list={data} />} />
+        </Switch>
+      </Router>
+        
       </div>
     );
   }
