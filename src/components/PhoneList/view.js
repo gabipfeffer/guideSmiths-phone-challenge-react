@@ -10,7 +10,7 @@ function PhoneList({ list }) {
       <h1>Phone List</h1>
       <div className="PhoneList__list">
         {list.map(phone => (
-          <Link key={phone.id} to={`/phones/${phone.id}`}>
+          <Link className="PhoneList__list__link" key={phone.id} to={`/phones/${phone.id}`}>
             <PhoneCard phone={phone} />
           </Link>
         ))}
