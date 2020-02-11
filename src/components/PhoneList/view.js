@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import './style.scss';
 import PhoneCard from '../PhoneCard';
 
-import { getPhones } from '../../services/phoneApi';
 
 function PhoneList() {
-  const [list, setList] = useState([]);
 
-  useEffect(() => {
-    async function fetchPhones() {
-      const list = await getPhones();
-
-      setList(list);
-    }
-
-    fetchPhones();
-  }, []);
+  const list = []
 
   return (
     <div className="PhoneList">
