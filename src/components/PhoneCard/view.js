@@ -6,7 +6,10 @@ function PhoneCard() {
   return (
     <div className="PhoneCard">
       <h2>iPhone 7</h2>
-      <img src="https://switch.com.my/wp-content/uploads/2017/11/iPhone7-Black-2Up-34L-US-EN-SCREEN.jpg" alt="iPhone 7" />
+      <img
+        src="https://switch.com.my/wp-content/uploads/2017/11/iPhone7-Black-2Up-34L-US-EN-SCREEN.jpg"
+        alt="iPhone 7"
+      />
       <h5>by APPLE</h5>
       <div className="PhoneCard__desc">
         <h4>Description:</h4>
@@ -20,9 +23,15 @@ function PhoneCard() {
         </p>
       </div>
       <div className="PhoneCard__addInfo">
-        <p><b>Screen:</b> 4,7 inch IPS</p>
-        <p><b>Processor:</b> A10 Fusion</p>
-        <p><b>RAM:</b> 2</p>
+        <p>
+          <b>Screen:</b> 4,7 inch IPS
+        </p>
+        <p>
+          <b>Processor:</b> A10 Fusion
+        </p>
+        <p>
+          <b>RAM:</b> 2
+        </p>
       </div>
     </div>
   );
