@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { requestPhones } from '../../state/actions';
 
+import Home from '../../components/Home';
 import PhoneList from '../../components/PhoneList';
 import PhoneCardContainer from '../PhoneCardContainer/view';
 
@@ -39,6 +40,7 @@ class App extends Component {
         <Switch>
           <Route path='/phones/:id' render={ () => isPending ? <h1>Loading</h1> : <PhoneCardContainer list={data} />} />
           <Route path='/phones' render={ () => isPending ? <h1>Loading</h1> : <PhoneList list={data} />} />
+          <Route path='/' component={Home} />
         </Switch>
       </Router>
         
