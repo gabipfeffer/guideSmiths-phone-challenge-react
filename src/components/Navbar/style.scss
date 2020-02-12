@@ -1,0 +1,22 @@
+.Navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    height: 10vh;
+    width: 100%;
+    margin-right: 3rem;
+
+    a {
+        margin: 0 1rem;
+        padding: 0.3rem;
+        text-decoration: none;
+        color: grey;
+        transition: all 0.2s ease-in-out;
+    }
+
+    a:hover {
+        color: black;
+        transform: scale(1.02);
+    }
+}
