@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loader from 'react-loader-spinner';
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -36,14 +37,43 @@ class App extends Component {
 
     return (
       <div className="App">
-      <Router>
-        <Switch>
-          <Route path='/phones/:id' render={ () => isPending ? <h1>Loading</h1> : <PhoneCardContainer list={data} />} />
-          <Route path='/phones' render={ () => isPending ? <h1>Loading</h1> : <PhoneList list={data} />} />
-          <Route path='/' component={Home} />
-        </Switch>
-      </Router>
-        
+        <Router>
+          <Switch>
+            <Route
+              path="/phones/:id"
+              render={() =>
+                isPending ? (
+                  <Loader
+                    type="Circles"
+                    color="#00BFFF"
+                    height={200}
+                    width={200}
+                    timeout={10000}
+                  />
+                ) : (
+                  <PhoneCardContainer list={data} />
+                )
+              }
+            />
+            <Route
+              path="/phones"
+              render={() =>
+                isPending ? (
+                  <Loader
+                    type="Circles"
+                    color="#00BFFF"
+                    height={200}
+                    width={200}
+                    timeout={10000}
+                  />
+                ) : (
+                  <PhoneList list={data} />
+                )
+              }
+            />
+            <Route path="/" component={Home} />
+          </Switch>
+        </Router>
       </div>
     );
   }
