@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 import Navbar from '../Navbar';
 
@@ -9,8 +10,8 @@ function Home() {
     <div className="Home">
       <Navbar />
       <div className="Home__title">
-        <h1>GuideSmith's Phone Catalog</h1>
-        <h2>All the lastest models here</h2>
+      <img src="https://images.ctfassets.net/5gv1edeicqfs/bomBQDobMA6eyu4CkuYmM/6f5debe74cf1e335bb0be7e3ecbba40b/gs-logo.png" alt='guideSmith logo' />
+        <Link to={'/phones'} >Shop Phones</Link>
       </div>
     </div>
   );
