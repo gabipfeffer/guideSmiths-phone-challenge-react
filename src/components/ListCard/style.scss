@@ -1,0 +1,11 @@
+.ListCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin: 1rem;
+
+    img {
+        width: 25rem;
+    }
+}

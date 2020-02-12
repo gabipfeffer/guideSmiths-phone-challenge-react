@@ -1,20 +1,30 @@
 .Home {
+  
+  &__title {
+    margin: 1rem auto;
+    height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: auto;
-    
-    
-    &__title {
-        height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
 
-        h1 {
-            font-size: 2.5rem;
-        }
+    img {
+      width: 50%;
     }
+
+    a {
+      font-size: 1.2rem;
+      margin-top: 2rem;
+      padding: 1rem 1.5rem;
+      background-color: #4BD28F;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-radius: 0.5rem;
+      color: #535353;
+    }
+
+    a:hover {
+      color: black;
+    }
+  }
 }
