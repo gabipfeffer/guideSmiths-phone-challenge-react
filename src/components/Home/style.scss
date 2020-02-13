@@ -16,15 +16,16 @@
       font-size: 1.2rem;
       margin-top: 2rem;
       padding: 1rem 1.5rem;
-      background-color: #4BD28F;
+      background-color: #17ae8e;
       text-decoration: none;
       text-transform: uppercase;
       border-radius: 0.5rem;
-      color: #535353;
+      color: black;
+      transition: all .2s ease-in;
     }
 
     a:hover {
-      color: black;
+      transform: scale(1.02);
     }
   }
 }

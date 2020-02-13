@@ -5,16 +5,18 @@ import './style.scss';
 function PhoneCard({ phone }) {
   return (
     <div className="PhoneCard">
-      <img
-        src={`http://localhost:3005/${phone.imageFileName}`}
-        alt={phone.imageFileName}
-      />
-      <div className='PhoneCard__container'>
-        <div className="PhoneCard__mainInfo">
+      <div className="PhoneCard__mainInfo">
+        <img
+          src={`http://localhost:3005/${phone.imageFileName}`}
+          alt={phone.imageFileName}
+        />
+        <div className="PhoneCard__mainInfo__mainSpecs">
           <h1>{phone.name}</h1>
           <h3>by {phone.manufacturer}</h3>
           <h2>${phone.price}</h2>
         </div>
+      </div>
+      <div className="PhoneCard__container">
         <div className="PhoneCard__desc">
           <p>{phone.description}</p>
         </div>
@@ -36,7 +38,7 @@ function PhoneCard({ phone }) {
             {phone.color}
           </p>
         </div>
-        <div className='PhoneCard__button'>
+        <div className="PhoneCard__button">
           <button>Buy Now</button>
         </div>
       </div>
