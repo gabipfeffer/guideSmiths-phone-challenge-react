@@ -14,7 +14,7 @@ function PhoneCardContainer({ list }) {
     <div className="PhoneCardContainer">
       <Navbar />
       <div className="PhoneCardContainer__back">
-        <Link to={'/phones'}>back to catalog</Link>
+        <Link to={'/phones'}>&larr; back to catalog</Link>
       </div>
       <div className="PhoneCard__phone">
         <PhoneCard phone={phone} className={PhoneCard} />
