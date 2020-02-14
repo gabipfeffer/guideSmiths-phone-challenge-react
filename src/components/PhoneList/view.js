@@ -13,7 +13,7 @@ function PhoneList({ list }) {
       <div className="PhoneList__list">
         {list.map(phone => (
           <div key={phone.id} className="PhoneList__list__card">
-            <Link className="PhoneList__list__link" to={`/phones/${phone.id}`}>
+            <Link className="PhoneList__list__card__link" to={`/phones/${phone.id}`}>
               <ListCard phone={phone} />
             </Link>
           </div>

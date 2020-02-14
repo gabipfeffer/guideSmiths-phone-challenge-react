@@ -1,73 +1,137 @@
 .PhoneCard {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 30rem;
-  height: 40rem;
-  margin: 2rem 0.5rem;
-  background-color: white;
-
-  img {
-    height: 22rem;
-  }
 
   &__mainInfo {
-    text-transform: capitalize;
-    margin-bottom: 1rem;
-    flex-wrap: wrap;
-    width: 27rem;
-    font-size: 3rem;
-  }
-
-  &__addInfo {
-    margin-top: 1rem;
-    text-transform: capitalize;
-    width: 27rem;
-  }
-}
-
-@media only screen and (min-width: 800px) {
-  .PhoneCard {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: 90%;
-    margin: 2rem;
+    justify-content: flex-start;
+    img {
+      width: 15rem;
+      height: 15rem;
+    }
 
-    &__img {
-      display: flex;
+    &__mainSpecs {
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      img {
-        width: 35rem;
-        height: auto;
+      text-align: left;
+
+      h1 {
+        font-size: 1.2rem;
+        margin: 0;
       }
     }
   }
 
-  .PhoneCard__mainInfo {
+  &__desc {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    width: 35rem;
-    text-align: left;
 
-    h2 {
-      font-size: 2rem;
+    p {
+      text-align: left;
+      margin: 0 1rem;
+    }
+  }
+
+  &__specifics {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 1rem;
+
+    p {
+      margin-right: 1rem;
+    }
+  }
+
+  &__button {
+    margin: 2rem 0;
+
+    button {
+      width: 10rem;
+      height: 2rem;
+      border: none;
+      border-radius: 0.5rem;
+      color: black;
+      background-color: #17ae8e;
+      transition: all 0.2s ease-in;
     }
 
-    &__mainInfo__specifics {
+    button:hover {
+      color: black;
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media only screen and (min-width: 880px) {
+  .PhoneCard__mainInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    img {
+      width: 30rem;
+      height: 30rem;
+    }
+
+    &__mainSpecs {
+      text-align: left;
+    }
+  }
+
+  .PhoneCard__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 40rem;
+
+
+    &__desc {
+      p {
+        margin: 0;
+        padding: 1rem 0;
+      }
+    }
+
+    &__specifics {
       display: flex;
       flex-direction: row;
-      align-items: center;
-      justify-content: center;
-
+      flex-wrap: wrap;
       p {
-        padding: 0 1rem;
+        text-transform: capitalize;
+      }
+    }
+
+    &__button {
+      margin: 2rem 0;
+
+      button {
+        width: 10rem;
+        height: 2rem;
+        border: none;
+        border-radius: 0.5rem;
+        color: black;
+        background-color: #17ae8e;
+        transition: all 0.2s ease-in;
+      }
+
+      button:hover {
+        color: black;
+        transform: scale(1.2);
       }
     }
   }

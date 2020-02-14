@@ -43,13 +43,15 @@ class App extends Component {
               path="/phones/:id"
               render={() =>
                 isPending ? (
-                  <Loader
-                    type="Circles"
-                    color="#00BFFF"
-                    height={200}
-                    width={200}
-                    timeout={10000}
-                  />
+                  <div className="App__spinner">
+                    <Loader
+                      type="Circles"
+                      color="#17ae8e"
+                      height={200}
+                      width={200}
+                      timeout={30000}
+                    />
+                  </div>
                 ) : (
                   <PhoneCardContainer list={data} />
                 )
@@ -59,13 +61,15 @@ class App extends Component {
               path="/phones"
               render={() =>
                 isPending ? (
-                  <Loader
-                    type="Circles"
-                    color="#00BFFF"
-                    height={200}
-                    width={200}
-                    timeout={10000}
-                  />
+                  <div className="App__spinner">
+                    <Loader
+                      type="Circles"
+                      color="#17ae8e"
+                      height={200}
+                      width={200}
+                      timeout={30000}
+                    />
+                  </div>
                 ) : (
                   <PhoneList list={data} />
                 )
