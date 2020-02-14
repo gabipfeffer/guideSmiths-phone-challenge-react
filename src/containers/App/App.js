@@ -4,24 +4,26 @@ import Loader from 'react-loader-spinner';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { connect } from 'react-redux';
-import { requestPhones } from '../../state/actions';
+import { requestPhones, setSearchField } from '../../state/actions';
 
 import Home from '../../components/Home';
-import PhoneList from '../../components/PhoneList';
+import PhoneListContainer from '../PhoneListContainer';
 import PhoneCardContainer from '../PhoneCardContainer/view';
 
 import './App.scss';
 
 const mapStateToProps = state => {
   return {
+    searchField: state.setSearchField.searchField,
     isPending: state.requestPhones.isPending,
     list: state.requestPhones.list,
-    error: state.requestPhones.error
+    error: state.requestPhones.error,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
+    onSearchChange: event => dispatch(setSearchField(event.target.value)),
     onRequestPhones: () => dispatch(requestPhones())
   };
 };
@@ -32,8 +34,10 @@ class App extends Component {
   }
 
   render() {
-    const { list, isPending } = this.props;
+    const { list, isPending, searchField, onSearchChange } = this.props;
     const { data } = list;
+
+
 
     return (
       <div className="App">
@@ -71,7 +75,11 @@ class App extends Component {
                     />
                   </div>
                 ) : (
-                  <PhoneList list={data} />
+                  <PhoneListContainer
+                    onSearchChange={onSearchChange}
+                    list={data}
+                    searchField={searchField}
+                  />
                 )
               }
             />
