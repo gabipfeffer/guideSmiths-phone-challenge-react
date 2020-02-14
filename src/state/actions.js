@@ -4,11 +4,10 @@ import {
   GET_PHONES_PENDING,
   GET_PHONES_SUCCESS,
   GET_PHONES_FAILED,
-
+  SET_SEARCHFIELD
 } from './constants';
 
 const baseURL = 'http://localhost:3005/phones';
-
 
 export const requestPhones = () => dispatch => {
   dispatch({ type: GET_PHONES_PENDING });
@@ -20,4 +19,8 @@ export const requestPhones = () => dispatch => {
     .catch(err => dispatch({ type: GET_PHONES_FAILED, payload: err }));
 };
 
-
+//@TODO => setSearchfield FN
+export const setSearchField = text => ({
+  type: SET_SEARCHFIELD,
+  payload: text
+});

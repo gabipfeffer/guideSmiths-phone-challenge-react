@@ -5,13 +5,13 @@ import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 
-import requestPhones from './state/reducers';
+import { requestPhones, setSearchField } from './state/reducers';
 import App from './containers/App/App';
 
 import './index.scss';
 
 const logger = createLogger();
-const rootReducer = combineReducers({ requestPhones });
+const rootReducer = combineReducers({ setSearchField, requestPhones });
 const store = createStore(
   rootReducer,
   applyMiddleware(thunkMiddleware, logger)
@@ -23,4 +23,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-

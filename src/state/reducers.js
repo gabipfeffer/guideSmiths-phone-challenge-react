@@ -1,15 +1,29 @@
 import {
   GET_PHONES_PENDING,
   GET_PHONES_SUCCESS,
-  GET_PHONES_FAILED
+  GET_PHONES_FAILED,
+  SET_SEARCHFIELD
 } from './constants';
+
+const initialSateSearchField = {
+  searchField: ''
+};
+
+export const setSearchField = (state = initialSateSearchField, action = {}) => {
+  switch (action.type) {
+    case SET_SEARCHFIELD:
+      return Object.assign({}, state, { searchField: action.payload });
+    default:
+      return state;
+  }
+};
 
 const initialState = {
   list: [],
   isPending: true
 };
 
-const requestPhones = (state = initialState, action = {}) => {
+export const requestPhones = (state = initialState, action = {}) => {
   switch (action.type) {
     case GET_PHONES_PENDING:
       return Object.assign({}, state, { isPending: true });
@@ -26,5 +40,3 @@ const requestPhones = (state = initialState, action = {}) => {
       return state;
   }
 };
-
-export default requestPhones;
