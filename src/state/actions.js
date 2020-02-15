@@ -32,7 +32,7 @@ export const requestPhoneId = id => dispatch => {
   axios
     .get(url)
     .then(response => response)
-    .then(data => dispatch({ type: GET_PHONE_ID_SUCCESS, payload: data.data }))
+    .then(data => dispatch({ type: GET_PHONE_ID_SUCCESS, payload: data.data[0] }))
     .catch(err => dispatch({ type: GET_PHONE_ID_FAILED, payload: err }));
 };
 

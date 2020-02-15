@@ -47,7 +47,7 @@ export const requestPhones = (state = initialStatePhoneList, action = {}) => {
 };
 
 const initialStatePhoneId = {
-  phone: {},
+  phone: null,
   phonePending: true
 };
 
