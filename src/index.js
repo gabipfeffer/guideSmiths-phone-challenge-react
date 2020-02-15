@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
-import { createLogger } from 'redux-logger';
 
-import { requestPhones, setSearchField } from './state/reducers';
+import { requestPhones, setSearchField, requestPhoneId } from './state/reducers';
 import App from './containers/App/App';
 
 import './index.scss';
 
-const logger = createLogger();
-const rootReducer = combineReducers({ setSearchField, requestPhones });
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const rootReducer = combineReducers({ setSearchField, requestPhones, requestPhoneId });
 const store = createStore(
   rootReducer,
-  applyMiddleware(thunkMiddleware, logger)
+  composeEnhancers(applyMiddleware(...[thunkMiddleware]))
 );
 
 ReactDOM.render(
