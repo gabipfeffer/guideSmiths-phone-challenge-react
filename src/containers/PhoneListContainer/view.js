@@ -6,6 +6,7 @@ import './style.scss';
 import Navbar from '../../components/Navbar';
 import SearchBox from '../../components/SearchBox';
 import PhoneList from '../../components/PhoneList';
+import Scroll from '../../components/Scroll';
 
 function PhoneListContainer({
   list,
@@ -23,8 +24,12 @@ function PhoneListContainer({
   let filteredPhones = list.filter(phone => {
     if (phone.name.toLowerCase().includes(searchField.toLowerCase())) {
       return phone.name.toLowerCase().includes(searchField.toLowerCase());
-    } else if (phone.manufacturer.toLowerCase().includes(searchField.toLowerCase())) {
-      return phone.manufacturer.toLowerCase().includes(searchField.toLowerCase());
+    } else if (
+      phone.manufacturer.toLowerCase().includes(searchField.toLowerCase())
+    ) {
+      return phone.manufacturer
+        .toLowerCase()
+        .includes(searchField.toLowerCase());
     }
   });
 
@@ -44,7 +49,9 @@ function PhoneListContainer({
           />
         </div>
       ) : (
-        <PhoneList list={filteredPhones} />
+        <Scroll>
+          <PhoneList list={filteredPhones} />
+        </Scroll>
       )}
     </div>
   );
