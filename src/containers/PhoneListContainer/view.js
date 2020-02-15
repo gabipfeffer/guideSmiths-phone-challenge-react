@@ -13,7 +13,8 @@ function PhoneListContainer({
   requestPhones,
   isPending,
   searchField,
-  setSearchField
+  setSearchField,
+  deletePhoneId
 }) {
   useEffect(() => {
     if (isPending) {
@@ -50,7 +51,7 @@ function PhoneListContainer({
         </div>
       ) : (
         <Scroll>
-          <PhoneList list={filteredPhones} />
+          <PhoneList deletePhoneId={deletePhoneId} list={filteredPhones} />
         </Scroll>
       )}
     </div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './style.scss';
 import ListCard from '../ListCard';
 
-function PhoneList({ list }) {
+function PhoneList({ list, deletePhoneId }) {
   return (
     <div className="PhoneList">
       <div className="PhoneList__list">
@@ -16,6 +16,13 @@ function PhoneList({ list }) {
             >
               <ListCard phone={phone} />
             </Link>
+            <button
+              className="PhoneList__button"
+              type="button"
+              onClick={() => deletePhoneId(phone.id)}
+            >
+              Delete
+            </button>
           </div>
         ))}
       </div>

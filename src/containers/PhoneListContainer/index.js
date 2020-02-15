@@ -1,7 +1,7 @@
 import PhoneListContainer from './view';
 
 import { connect } from 'react-redux';
-import { requestPhones, setSearchField } from '../../state/actions';
+import { requestPhones, setSearchField, deletePhoneId } from '../../state/actions';
 
 const mapStateToProps = state => {
   return {
@@ -15,7 +15,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     requestPhones: () => dispatch(requestPhones()),
-    setSearchField: event => dispatch(setSearchField(event.target.value))
+    setSearchField: event => dispatch(setSearchField(event.target.value)),
+    deletePhoneId: (id) => dispatch(deletePhoneId(id))
   };
 };
 

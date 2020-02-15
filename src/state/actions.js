@@ -7,7 +7,10 @@ import {
   SET_SEARCHFIELD,
   GET_PHONE_ID_PENDING,
   GET_PHONE_ID_SUCCESS,
-  GET_PHONE_ID_FAILED
+  GET_PHONE_ID_FAILED,
+  DELETE_PHONE_PENDING,
+  DELETE_PHONE_SUCCESS,
+  DELETE_PHONE_FAILED
 } from './constants';
 
 const baseURL = 'http://localhost:3005/phones';
@@ -32,8 +35,24 @@ export const requestPhoneId = id => dispatch => {
   axios
     .get(url)
     .then(response => response)
-    .then(data => dispatch({ type: GET_PHONE_ID_SUCCESS, payload: data.data[0] }))
+    .then(data =>
+      dispatch({ type: GET_PHONE_ID_SUCCESS, payload: data.data[0] })
+    )
     .catch(err => dispatch({ type: GET_PHONE_ID_FAILED, payload: err }));
+};
+
+// delete phone by id
+export const deletePhoneId = id => dispatch => {
+  dispatch({ type: DELETE_PHONE_PENDING });
+  const url = buildUrl(id);
+  axios
+    .delete(url)
+    .then(response => response)
+    .then(data => {
+      dispatch({ type: GET_PHONES_SUCCESS, payload: data.data });
+      dispatch({ type: DELETE_PHONE_SUCCESS });
+    })
+    .catch(err => dispatch({ type: DELETE_PHONE_FAILED, payload: err }));
 };
 
 // set searchfield to filter phones

@@ -14,7 +14,8 @@
 
   &__list__card {
     border-radius: 3rem;
-    margin: 0.2rem;
+    margin: 0.3rem;
+    padding: 0.4rem 0;
     transition: all 0.3s ease-in-out;
   }
 
@@ -35,5 +36,19 @@
     &:active {
       text-decoration: none;
     }
+  }
+
+
+  button {
+    background-color: #17ae8e;
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+    padding: 0.2rem 0.3rem;
+    border: none;
+    color: black;
+  }
+
+  button:hover {
+    transform: scale(1.02);
   }
 }
