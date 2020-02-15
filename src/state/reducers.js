@@ -5,7 +5,10 @@ import {
   SET_SEARCHFIELD,
   GET_PHONE_ID_PENDING,
   GET_PHONE_ID_SUCCESS,
-  GET_PHONE_ID_FAILED
+  GET_PHONE_ID_FAILED,
+  DELETE_PHONE_PENDING,
+  DELETE_PHONE_SUCCESS,
+  DELETE_PHONE_FAILED
 } from './constants';
 
 const initialSateSearchField = {
@@ -63,6 +66,24 @@ export const requestPhoneId = (state = initialStatePhoneId, action = {}) => {
       });
     case GET_PHONE_ID_FAILED:
       return Object.assign({}, state, { error: action.payload });
+    default:
+      return state;
+  }
+};
+
+// reducer to delete phone by ID
+export const deletePhones = (state = initialStatePhoneList, action = {}) => {
+  switch (action.type) {
+    case DELETE_PHONE_PENDING:
+      return Object.assign({}, state, { isPending: true });
+    case DELETE_PHONE_SUCCESS:
+      return Object.assign({}, state, {
+        isPending: false
+      });
+    case DELETE_PHONE_FAILED:
+      return Object.assign({}, state, {
+        error: action.payload
+      });
     default:
       return state;
   }
