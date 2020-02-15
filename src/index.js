@@ -4,14 +4,14 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 
-import { requestPhones, setSearchField, requestPhoneId } from './state/reducers';
+import { requestPhones, setSearchField, requestPhoneId, deletePhones } from './state/reducers';
 import App from './containers/App/App';
 
 import './index.scss';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const rootReducer = combineReducers({ setSearchField, requestPhones, requestPhoneId });
+const rootReducer = combineReducers({ setSearchField, requestPhones, requestPhoneId, deletePhones });
 const store = createStore(
   rootReducer,
   composeEnhancers(applyMiddleware(...[thunkMiddleware]))
