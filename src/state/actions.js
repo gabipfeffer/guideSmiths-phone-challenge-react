@@ -15,7 +15,7 @@ export const requestPhones = () => dispatch => {
   axios
     .get(url)
     .then(response => response)
-    .then(data => dispatch({ type: GET_PHONES_SUCCESS, payload: data }))
+    .then(data => dispatch({ type: GET_PHONES_SUCCESS, payload: data.data }))
     .catch(err => dispatch({ type: GET_PHONES_FAILED, payload: err }));
 };
 

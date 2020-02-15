@@ -17,7 +17,7 @@ const mapStateToProps = state => {
     searchField: state.setSearchField.searchField,
     isPending: state.requestPhones.isPending,
     list: state.requestPhones.list,
-    error: state.requestPhones.error,
+    error: state.requestPhones.error
   };
 };
 
@@ -35,9 +35,6 @@ class App extends Component {
 
   render() {
     const { list, isPending, searchField, onSearchChange } = this.props;
-    const { data } = list;
-
-
 
     return (
       <div className="App">
@@ -57,7 +54,7 @@ class App extends Component {
                     />
                   </div>
                 ) : (
-                  <PhoneCardContainer list={data} />
+                  <PhoneCardContainer list={list} />
                 )
               }
             />
@@ -77,7 +74,7 @@ class App extends Component {
                 ) : (
                   <PhoneListContainer
                     onSearchChange={onSearchChange}
-                    list={data}
+                    list={list}
                     searchField={searchField}
                   />
                 )
