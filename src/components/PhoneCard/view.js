@@ -7,7 +7,7 @@ function PhoneCard({ phone }) {
     <div className="PhoneCard">
       <div className="PhoneCard__mainInfo">
         <img
-          src={`http://localhost:3005/${phone.imageFileName}`}
+          src={`http://localhost:3005/images/${phone.imageFileName}`}
           alt={phone.imageFileName}
         />
         <div className="PhoneCard__mainInfo__mainSpecs">

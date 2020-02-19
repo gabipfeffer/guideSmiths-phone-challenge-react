@@ -6,7 +6,7 @@ function ListCard({ phone }) {
   return (
     <div className="ListCard">
       <img
-        src={`http://localhost:3005/${phone.imageFileName}`}
+        src={`http://localhost:3005/images/${phone.imageFileName}`}
         alt={phone.imageFileName}
       />
       <h2>{phone.name}</h2>
